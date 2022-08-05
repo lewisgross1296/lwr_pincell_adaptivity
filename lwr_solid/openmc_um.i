@@ -52,6 +52,28 @@
   batches = 1500
 []
 
+[Adaptivity]
+  # uncomment and change active blocks if it will be desired to exclude blocks from adaptivity
+  # active = '1 2 3'
+  max_h_level = 3
+  cycles_per_step = 1
+  marker = error_tol_marker
+  [Indicators]
+    [heat_source_value_jump]
+      type = ValueJumpIndicator
+      variable = heat_source
+    []
+  []
+  [Markers]
+    [error_tol_marker]
+      type = ErrorToleranceMarker
+      coarsen = 5e-8
+      refine = 1e-6
+      indicator = heat_source_value_jump
+    []
+  []
+[]
+
 [Executioner]
   type = Transient
 []

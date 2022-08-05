@@ -99,31 +99,31 @@ T_fluid = ${fparse 280.0 + 273.15}
 []
 
 
-[Adaptivity]
-  # uncomment and change active blocks if it will be desired to exclude blocks from adaptivity
-  # active = '1 2 3'
-  max_h_level = 3
-  cycles_per_step = 1
-  # potentially want more cycles
-  # initial_marker = INSERT MARKER
-  # initial_steps = 2
-  # recompute_markers_during_cycles = true
-  marker = error_tol_marker
-  [Indicators]
-    [grad_temp_jump]
-      type = GradientJumpIndicator
-      variable = temp
-    []
-  []
-  [Markers]
-    [error_tol_marker]
-      type = ErrorToleranceMarker
-      coarsen = 1e-8
-      refine = 1e-7
-      indicator = grad_temp_jump
-    []
-  []
-[]
+# [Adaptivity]
+#   # uncomment and change active blocks if it will be desired to exclude blocks from adaptivity
+#   # active = '1 2 3'
+#   max_h_level = 3
+#   cycles_per_step = 1
+#   # potentially want more cycles
+#   # initial_marker = INSERT MARKER
+#   # initial_steps = 2
+#   # recompute_markers_during_cycles = true
+#   marker = error_tol_marker
+#   [Indicators]
+#     [grad_temp_jump]
+#       type = GradientJumpIndicator
+#       variable = temp
+#     []
+#   []
+#   [Markers]
+#     [error_tol_marker]
+#       type = ErrorToleranceMarker
+#       coarsen = 1e-8
+#       refine = 1e-7
+#       indicator = grad_temp_jump
+#     []
+#   []
+# []
 
 [Executioner]
   type = Transient
