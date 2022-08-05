@@ -47,9 +47,9 @@
   check_zero_tallies = false
   solid_cell_level = 0
 
-  particles = 20000
+  particles = 10000
   inactive_batches = 500
-  batches = 10000
+  batches = 1500
 []
 
 [Executioner]
